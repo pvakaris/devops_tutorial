@@ -2,7 +2,7 @@ version: '3'
 services:
   student_service:
     build: .
-    image: student_service
+    image: nginx
     restart: unless-stopped
     depends_on:
       - mongo
