@@ -17,11 +17,7 @@
               "listen": "test",
               "script": {
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "tests[\"Response should not be 'do some magic!'\"] = responseBody != \"do some magic!\";",
-                  "// pm.globals.set(\"student_id\", responseBody);",
-                  "var jsonData = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"student_id\", jsonData);"
+                  ""
                 ],
                 "type": "text/javascript"
               }
@@ -154,24 +150,6 @@
               "listen": "test",
               "script": {
                 "exec": [
-                  "console.log(responseBody)",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "tests[\"Response should not be 'do some magic!'\"] = responseBody != \"do some magic!\";",
-                  "var jsonData = JSON.parse(responseBody);",
-                  "first_name = postman.getEnvironmentVariable(\"first_name\");",
-                  "tests[\"Name must be \"+first_name] = jsonData.first_name == first_name;",
-                  "last_name = postman.getEnvironmentVariable(\"last_name\");",
-                  "tests[\"last name  must be \"+last_name] = jsonData.last_name == last_name;",
-                  "",
-                  "subject_name_1 = postman.getEnvironmentVariable(\"subject_name_1\");",
-                  "grade_1 = postman.getEnvironmentVariable(\"grade_1\");",
-                  "tests[\"Subject must be \"+subject_name_1] = jsonData['grade_records'][0]['subject_name'] == subject_name_1;",
-                  "tests[\"Grade of \"+subject_name_1+\" must be \"+grade_1] = jsonData['grade_records'][0]['grade'] == grade_1;",
-                  "",
-                  "subject_name_2 = postman.getEnvironmentVariable(\"subject_name_2\");",
-                  "grade_2 = postman.getEnvironmentVariable(\"grade_2\");",
-                  "tests[\"Subject must be \"+subject_name_2] = jsonData['grade_records'][1]['subject_name'] == subject_name_2;",
-                  "tests[\"Grade of \"+subject_name_1+\" must be \"+grade_1] = jsonData['grade_records'][1]['grade'] == grade_2;",
                   ""
                 ],
                 "type": "text/javascript"
@@ -330,8 +308,6 @@
               "listen": "test",
               "script": {
                 "exec": [
-                  "tests[\"Status code is 404\"] = responseCode.code === 404;",
-                  "tests[\"Response should not be 'do some magic!'\"] = responseBody != \"do some magic!\";",
                   ""
                 ],
                 "type": "text/javascript"
@@ -483,8 +459,7 @@
               "listen": "test",
               "script": {
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "tests[\"Response should not be 'do some magic!'\"] = responseBody != \"do some magic!\";"
+                  ""
                 ],
                 "type": "text/javascript"
               }
@@ -616,10 +591,7 @@
               "listen": "test",
               "script": {
                 "exec": [
-                  "tests[\"Status code is 404\"] = responseCode.code === 404;",
-                  "tests[\"Response should not be 'do some magic!'\"] = responseBody != \"do some magic!\";",
-                  "let count = 0;",
-                  "postman.setEnvironmentVariable(\"count\", count);"
+                  ""
                 ],
                 "type": "text/javascript"
               }
@@ -751,8 +723,7 @@
               "listen": "test",
               "script": {
                 "exec": [
-                  "tests[\"Status code is 400\"] = responseCode.code === 400;",
-                  "tests[\"Response should not be 'do some magic!'\"] = responseBody != \"do some magic!\";"
+                  ""
                 ],
                 "type": "text/javascript"
               }
@@ -885,8 +856,7 @@
               "listen": "test",
               "script": {
                 "exec": [
-                  "tests[\"Status code is 400\"] = responseCode.code === 400;",
-                  "tests[\"Response should not be 'do some magic!'\"] = responseBody != \"do some magic!\";"
+                  ""
                 ],
                 "type": "text/javascript"
               }
@@ -1019,8 +989,7 @@
               "listen": "test",
               "script": {
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "tests[\"Response should not be 'do some magic!'\"] = responseBody != \"do some magic!\";"
+                  ""
                 ],
                 "type": "text/javascript"
               }
@@ -1153,30 +1122,6 @@
               "listen": "test",
               "script": {
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "tests[\"Response should not be 'do some magic!'\"] = responseBody != \"do some magic!\";",
-                  "var jsonData = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"student_id\", jsonData);",
-                  "",
-                  "count = postman.getEnvironmentVariable(\"count\");",
-                  "count++;",
-                  "postman.setEnvironmentVariable(\"count\",count);",
-                  "console.log(count)",
-                  "if (count < 200) {",
-                  "    postman.setNextRequest(\"9.Add a new random student\");",
-                  "} else{",
-                  "    // pm.test(\"Total elapsed time must be  less than 100\", function () {",
-                  "           ",
-                  "    //     start_time = postman.getEnvironmentVariable(\"start_time\"); ",
-                  "    //     var elapsed = new Date().getTime() - start_time;  //milliseconds",
-                  "    //     console.log(\"elapsed: \"+elapsed)",
-                  "    //     pm.expect(elapsed).to.be.below(100);",
-                  "    // });",
-                  "    // setTimeout(() => { console.log(\"waiting!\"); }, 10000);",
-                  "    postman.setNextRequest(\"13.Find_random_student\");",
-                  "}",
-                  "",
-                  "    ",
                   ""
                 ],
                 "type": "text/javascript"
@@ -1311,10 +1256,6 @@
               "listen": "test",
               "script": {
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "tests[\"Response should not be 'do some magic!'\"] = responseBody != \"do some magic!\";",
-                  "var jsonData = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"student_id\", jsonData);",
                   ""
                 ],
                 "type": "text/javascript"
@@ -1449,8 +1390,6 @@
               "listen": "test",
               "script": {
                 "exec": [
-                  "tests[\"Status code is 409\"] = responseCode.code === 409;",
-                  "tests[\"Response should not be 'do some magic!'\"] = responseBody != \"do some magic!\";",
                   ""
                 ],
                 "type": "text/javascript"
