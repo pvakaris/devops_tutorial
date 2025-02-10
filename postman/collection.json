@@ -21,7 +21,7 @@
                   "tests[\"Response should not be 'do some magic!'\"] = responseBody != \"do some magic!\";",
                   "// pm.globals.set(\"student_id\", responseBody);",
                   "var jsonData = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"student_id\", jsonData.student_id);"
+                  "postman.setEnvironmentVariable(\"student_id\", jsonData);"
                 ],
                 "type": "text/javascript"
               }
@@ -152,30 +152,30 @@
           "event": [
             {
               "listen": "test",
-              "script": { "exec": [
-                "console.log(responseBody)",
-                "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                "tests[\"Response should not be 'do some magic!'\"] = responseBody != \"do some magic!\";",
-                "var jsonData = JSON.parse(responseBody);",
-                "first_name = postman.getEnvironmentVariable(\"first_name\");",
-                "tests[\"Name must be \"+first_name] = jsonData.first_name == first_name;",
-                "last_name = postman.getEnvironmentVariable(\"last_name\");",
-                "tests[\"Last name must be \"+last_name] = jsonData.last_name == last_name;",
-                "",
-                "subject_name_1 = postman.getEnvironmentVariable(\"subject_name_1\");",
-                "grade_1 = postman.getEnvironmentVariable(\"grade_1\");",
-                "tests[\"Subject must be \"+subject_name_1] = jsonData['grade_records'][0]['subject_name'] == subject_name_1;",
-                "tests[\"Grade of \"+subject_name_1+\" must be \"+grade_1] = jsonData['grade_records'][0]['grade'] == grade_1;",
-                "",
-                "subject_name_2 = postman.getEnvironmentVariable(\"subject_name_2\");",
-                "grade_2 = postman.getEnvironmentVariable(\"grade_2\");",
-                "tests[\"Subject must be \"+subject_name_2] = jsonData['grade_records'][1]['subject_name'] == subject_name_2;",
-                "tests[\"Grade of \"+subject_name_2+\" must be \"+grade_2] = jsonData['grade_records'][1]['grade'] == grade_2;"
-              ],
+              "script": {
+                "exec": [
+                  "console.log(responseBody)",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Response should not be 'do some magic!'\"] = responseBody != \"do some magic!\";",
+                  "var jsonData = JSON.parse(responseBody);",
+                  "first_name = postman.getEnvironmentVariable(\"first_name\");",
+                  "tests[\"Name must be \"+first_name] = jsonData.first_name == first_name;",
+                  "last_name = postman.getEnvironmentVariable(\"last_name\");",
+                  "tests[\"last name  must be \"+last_name] = jsonData.last_name == last_name;",
+                  "",
+                  "subject_name_1 = postman.getEnvironmentVariable(\"subject_name_1\");",
+                  "grade_1 = postman.getEnvironmentVariable(\"grade_1\");",
+                  "tests[\"Subject must be \"+subject_name_1] = jsonData['grade_records'][0]['subject_name'] == subject_name_1;",
+                  "tests[\"Grade of \"+subject_name_1+\" must be \"+grade_1] = jsonData['grade_records'][0]['grade'] == grade_1;",
+                  "",
+                  "subject_name_2 = postman.getEnvironmentVariable(\"subject_name_2\");",
+                  "grade_2 = postman.getEnvironmentVariable(\"grade_2\");",
+                  "tests[\"Subject must be \"+subject_name_2] = jsonData['grade_records'][1]['subject_name'] == subject_name_2;",
+                  "tests[\"Grade of \"+subject_name_1+\" must be \"+grade_1] = jsonData['grade_records'][1]['grade'] == grade_2;",
+                  ""
+                ],
                 "type": "text/javascript"
-
               }
-
             }
           ],
           "request": {
